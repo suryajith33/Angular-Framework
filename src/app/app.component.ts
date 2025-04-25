@@ -9,7 +9,7 @@ import { Router, RouterOutlet } from "@angular/router";
 })
 export class AppComponent {
 	title = "PM-Tool-Revamp";
-	constructor(private router: Router) {}.
+	constructor(private router: Router) {}
 	 goTO(){
 		
 	 }
