@@ -1,15 +1,33 @@
 import { Routes } from "@angular/router";
-import { AppComponent } from "./app.component";
-import { MainContainerComponent } from "./modules/main-container/main-container.component";
-import { LoginComponent } from "./modules/auth/login/login.component";
+import { authGuard } from "./core/guards/auth.guard";
 
 export const routes: Routes = [
 	{
-		path: "login",
-		component: LoginComponent,
+		path: "auth",
+		children: [
+			{
+				path: "login",
+				loadComponent: () => import("./modules/auth/login/login.component").then((m) => m.LoginComponent),
+			},
+			{
+				path: "register",
+				loadComponent: () => import("./modules/auth/register/register.component").then((m) => m.RegisterComponent),
+			},
+			{
+				path: "forgot-password",
+				loadComponent: () =>
+					import("./modules/auth/forgot-password/forgot-password.component").then((m) => m.ForgotPasswordComponent),
+			},
+		],
 	},
 	{
 		path: "",
-		component: MainContainerComponent,
+		canActivate: [authGuard],
+		loadComponent: () =>
+			import("./modules/main-container/main-container.component").then((m) => m.MainContainerComponent),
+	},
+	{
+		path: "**",
+		redirectTo: "",
 	},
 ];
