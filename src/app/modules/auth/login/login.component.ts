@@ -3,10 +3,10 @@ import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { Store } from "@ngrx/store";
-import { selectLoginState } from "../../../shared/store/login/login.selectors";
 import { Subscription } from "rxjs";
 import { LoginResponse } from "../../../shared/store/login/login.model";
 import { loginActions } from "../../../shared/store/login/login.action";
+import { selectLoginState } from "../../../shared/store/login/login.selector";
 
 interface AppState {
 	auth: LoginResponse;
