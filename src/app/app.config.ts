@@ -1,18 +1,14 @@
-import { ApplicationConfig, provideZoneChangeDetection, ErrorHandler } from "@angular/core";
-import { provideRouter } from "@angular/router";
-import { provideHttpClient, withInterceptors } from "@angular/common/http";
-import { errorInterceptor } from "./core/middleware/error.interceptor";
-import { ErrorHandlerService } from "./core/services/error-handler.service";
 
-import { routes } from "./app.routes";
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, ErrorHandler, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideEffects } from '@ngrx/effects';
 import { LoginEffects } from './shared/store/login/login.effect';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideStore } from '@ngrx/store';
 import { authReducer } from './shared/store/login/login.reducer';
 import { routes } from './app.routes';
+import { errorInterceptor } from './core/middleware/error.interceptor';
+import { ErrorHandlerService } from './core/services/error-handler.service';
 
 export const appConfig: ApplicationConfig = {
 	providers: [
