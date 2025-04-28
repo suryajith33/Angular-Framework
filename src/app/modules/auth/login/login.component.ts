@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 			password: ["", [Validators.required, Validators.minLength(6)]],
 		});
 	}
-//useeffect
+
 	ngOnInit() {
 		this.subscription.add(
 			this.store.select(selectLoginState).subscribe((state) => {
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 			})
 		);
 	}
-//useeffect clean up
+
 	ngOnDestroy() {
 		this.subscription.unsubscribe();
 	}
