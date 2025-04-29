@@ -4,23 +4,22 @@ import { ErrorHandler, Injectable } from "@angular/core";
 	providedIn: "root",
 })
 export class ErrorHandlerService implements ErrorHandler {
-	handleError(error: any): void {
+	handleError(error: Error): void {
 		// You can add your error handling logic here
-		console.error("Global error handler:", error);
-
 		// Example: Send error to error tracking service
 		this.sendToErrorTrackingService(error);
-
+		alert(error);
 		// Example: Show error in UI
 		this.showErrorNotification(error);
 	}
 
-	private sendToErrorTrackingService(error: any): void {
+	private sendToErrorTrackingService(error: Error): void {
+		alert(error);
 		// Implement your error tracking service integration here
 		// Example: Sentry, LogRocket, etc.
 	}
 
-	private showErrorNotification(error: any): void {
+	private showErrorNotification(error: Error): void {
 		alert(error);
 		// Implement your notification service here
 		// Example: Toast notification, modal, etc.

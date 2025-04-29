@@ -76,6 +76,5 @@ export class ForgotPasswordComponent {
 
 	onSubmit() {
 		// TODO: Implement password reset logic
-		console.log("Sending password reset email to:", this.email);
 	}
 }

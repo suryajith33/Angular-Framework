@@ -97,7 +97,5 @@ export class RegisterComponent {
 			alert("Passwords do not match");
 			return;
 		}
-		// TODO: Implement registration logic
-		console.log("Registering user:", { username: this.username, email: this.email });
 	}
 }

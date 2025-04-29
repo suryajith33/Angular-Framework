@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 	private subscription: Subscription = new Subscription();
 
 	constructor(
-		private fb: FormBuilder, 
+		private fb: FormBuilder,
 		private router: Router,
 		private store: Store<AppState>
 	) {
@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 				if (state) {
 					this.isLoading = state.loading;
 					if (state.token) {
-						this.router.navigate(['/dashboard']);
+						this.router.navigate(["/dashboard"]);
 					}
 				}
 			})
