@@ -20,20 +20,20 @@ import { CommonModule } from "@angular/common";
 			.error-boundary {
 				padding: 20px;
 				text-align: center;
-				background-color: #f8f9fa;
+				background-color: var(--white);
 				border-radius: 8px;
 				margin: 20px;
 			}
 			button {
 				padding: 8px 16px;
-				background-color: #007bff;
+				background-color: var(--blue);
 				color: white;
 				border: none;
 				border-radius: 4px;
 				cursor: pointer;
 			}
 			button:hover {
-				background-color: #0056b3;
+				background-color: var(--blue);
 			}
 		`,
 	],
