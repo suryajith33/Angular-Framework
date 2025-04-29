@@ -45,9 +45,8 @@ export class ErrorBoundaryComponent {
 	constructor() {
 		// Override the default error handler
 		const originalErrorHandler = this.errorHandler.handleError;
-		this.errorHandler.handleError = (error: any) => {
+		this.errorHandler.handleError = (error) => {
 			this.hasError = true;
-			console.error("Error caught by error boundary:", error);
 			originalErrorHandler(error);
 		};
 	}

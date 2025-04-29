@@ -1,19 +1,18 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { User } from '../auth.model';
-import { LoginResponse } from './store/login.model';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { LoginResponse } from "./store/login.model";
 
 @Injectable({
-  providedIn: 'root',
+	providedIn: "root",
 })
 export class LoginService {
-  constructor(private http: HttpClient) {}
-  
-//remove after setting up config file
-  private loginUrl = '/api/login'; 
+	constructor(private http: HttpClient) {}
 
-  login(username:string, password:string): Observable<LoginResponse> {
-    return this.http.post<LoginResponse>(this.loginUrl, {username, password});
-  }
+	//remove after setting up config file
+	private loginUrl = "/api/login";
+
+	login(username: string, password: string): Observable<LoginResponse> {
+		return this.http.post<LoginResponse>(this.loginUrl, { username, password });
+	}
 }

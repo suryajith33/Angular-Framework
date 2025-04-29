@@ -39,8 +39,8 @@ export const errorInterceptor: HttpInterceptorFn = (req, next) => {
 				}
 			}
 
-			// You can add your error handling logic here, such as showing a toast notification
-			console.error(errorMessage);
+			// Handle error through error service
+			throwError(() => errorMessage);
 
 			return throwError(() => error);
 		})
