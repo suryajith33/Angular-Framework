@@ -2,8 +2,8 @@ import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, mergeMap } from 'rxjs/operators'; // Import RxJS operators
 import { of } from 'rxjs'; // Import `of` to create an observable from a value
-import { LoginService } from '../../../modules/auth/login/user-service.service';
-import { User } from '../../../modules/auth/auth.model';
+import { LoginService } from '../user-service.service';
+import { User } from '../../auth.model';
 import { loginActions } from './login.action';
 
 @Injectable()
